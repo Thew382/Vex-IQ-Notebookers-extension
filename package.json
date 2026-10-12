@@ -3,10 +3,26 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build:css": "node ./scripts/build-css.mjs",
-    "watch:css": "node ./scripts/build-css.mjs --watch"
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "watch": "vite build --watch",
+    "build:css": "vite build",
+    "watch:css": "vite build --watch"
   },
   "devDependencies": {
-    "tailwindcss": "^4.1.0"
+    "@tailwindcss/vite": "^4.3.3",
+    "@vitejs/plugin-react": "^5.2.0",
+    "tailwindcss": "^4.1.0",
+    "vite": "^7.3.7"
+  },
+  "dependencies": {
+    "@base-ui/react": "^1.9.0",
+    "class-variance-authority": "^0.7.1",
+    "cn": "^0.4.0",
+    "lucide-react": "^1.55.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "shadcn": "^4.21.4",
+    "tw-animate-css": "^1.4.0"
   }
 }

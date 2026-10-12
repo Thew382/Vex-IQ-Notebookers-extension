@@ -1,0 +1,12 @@
+{
+  "name": "vex-iq-notebooker-tool",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:css": "node ./scripts/build-css.mjs",
+    "watch:css": "node ./scripts/build-css.mjs --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.1.0"
+  }
+}

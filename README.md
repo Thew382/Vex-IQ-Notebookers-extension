@@ -9,7 +9,7 @@ npm install
 npm run build
 ```
 
-In `chrome://extensions`, enable Developer mode, choose **Load unpacked**, and select this project's **dist** folder. The root contains source files; `dist` contains the compiled UI, manifest, background worker, content scripts, and icons ready for Chrome.
+In `chrome://extensions`, enable Developer mode, choose **Load unpacked**, and select this project's folder or its **dist** folder. Both work after building: the project-root manifest opens the compiled page in `dist`, and `dist` also contains a standalone manifest, background worker, content scripts, and icons ready for Chrome.
 
 After editing source files, rebuild and reload the extension. Use `npm run watch` for automatic rebuilds. `npm run dev` previews the UI in a normal browser; Chrome extension APIs are only available in the loaded extension.
 

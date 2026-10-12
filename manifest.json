@@ -5,8 +5,8 @@
     "description": "the first ever tool specifically made for vex iq notebookers",
     "author" : "Thew",
     "action": {
-        "default_popup": "notebookertool.html",
-        "defaut_title": "open side panel",
+        "default_popup": "dist/notebookertool.html",
+        "default_title": "open side panel",
          "default_icon": {
             "16": "images/icon-16.png",
             "32": "images/icon-32.png",
@@ -19,7 +19,7 @@
         "sidePanel"
     ],
     "side_panel": {
-        "default_path" : "notebookertool.html"
+        "default_path" : "dist/notebookertool.html"
     },
     "icons": {
     "16": "images/icon-16.png",

@@ -1,5 +1,6 @@
 import { createRoot } from 'react-dom/client'
 import PieceCard from './components/ui/PieceCard'
+import FolderView from './components/FolderView'
 import './input.css'
 import { Input } from "@/components/ui/input"
 import { useEffect, useState } from 'react'
@@ -59,33 +60,8 @@ function App() {
         ))}
       </div>
     )}
-        {/* <p>{selectedPiece?.label}</p> */}
-
-        {selectedPiece && (
-      <div className="w-[93%] mx-auto mt-4">
-        <button type="button" onClick={() => setSelectedPiece(null)}>
-          ← All pieces
-        </button>
-
-        <h2>{selectedPiece.label}</h2>
-
-        <div className="grid grid-cols-2 gap-3">
-          {selectedPiece.images.map(image => (
-            <div key ={image.path} className="h-24 flex items-center justify-center">
-            <img
-              key={image.path}
-              src={'./parts/' + image.path}
-              alt={selectedPiece.label}
-              // className="w-full h-24 object-contain"
-              className="w-auto h-auto max-w-full max-h-full object-contain"
-              onDragStart = {event => {
-                event.dataTransfer.setDragImage(event.currentTarget, 0, 0)
-              }}
-            />
-            </div>
-          ))}
-        </div>
-      </div>
+    {selectedPiece && (
+      <FolderView piece={selectedPiece} onBack={() => setSelectedPiece(null)} />
     )}
 
     </div>

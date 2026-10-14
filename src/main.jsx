@@ -1,7 +1,8 @@
 import { createRoot } from 'react-dom/client'
-// Loads Tailwind utilities and the shadcn theme for every UI component.
+import PieceCard from './components/ui/PieceCard'
 import './input.css'
 import { Input } from "@/components/ui/input"
+import { useEffect, useState } from 'react'
 import {
   InputGroup,
   InputGroupAddon,
@@ -20,18 +21,22 @@ import {
 import { SearchIcon } from 'lucide-react'
 
 function App() {
+  const [pieces, setPieces] = useState([])
+  useEffect(()=>{
+    fetch('./parts/catalog.json')
+      .then(response => response.json())
+      .then(data => setPieces(data.components))
+    .catch(error => console.error(error))
+  },[])
   return (
     <div className="grid">
-       {/* <h1 className="text-[20px] font-geist text-white font-semibold ml-[3.5%] mt-[3.5%]">
-         VEX IQ Library
-      </h1> */}
+       
 
-      {/* <SearchIcon/>
-      <Input placeholder="Search for pieces" className="justify-self-center w-[93%] mt-[3.5px]" /> */}
+      
       <Field className="w-[93%] mx-auto gap-1 mt-[5px]">
       <FieldLabel htmlFor="inline-start-input" className="text-[23px] font-geist text-white font-semibold">VEX IQ Library</FieldLabel>
       
-      <InputGroup className="h-[37px]">
+      <InputGroup className="h-[37px] bg-[#1B1C22]">
         
         <InputGroupInput id="inline-start-input" placeholder="Search for parts" className="w-[93%] h-full pt-[3px] pb-[5px]" />
         <InputGroupAddon align="inline-start">
@@ -39,10 +44,15 @@ function App() {
         </InputGroupAddon>
       </InputGroup>
     </Field>
-      
-      
-    
+      <div className="grid grid-cols-2 gap-3 w-[93%] mx-auto mt-4">
+        {pieces.map(piece => (
+        <PieceCard name={piece.label} cover={'./parts/' + piece.cover.path} imageCount ={piece.images.length}/>
+        ))}
+      </div>
+
+
     </div>
+      
    
   )
 }

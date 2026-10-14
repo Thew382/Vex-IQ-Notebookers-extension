@@ -19,7 +19,7 @@ export default function FolderView({ piece, onBack }) {
           <figure key={image.path} className="group min-w-0">
             <div className="relative flex h-36 items-center justify-center rounded-xl border border-white/[0.06] bg-[#191A20] p-4 transition-colors group-hover:border-white/15 group-hover:bg-[#22232B] motion-reduce:transition-none">
               <GripVertical aria-hidden="true" className="pointer-events-none absolute right-2 top-2 size-3.5 text-zinc-500 opacity-0 transition-opacity group-hover:opacity-100 motion-reduce:transition-none" />
-              <img src={'./parts/' + image.path} alt={`${piece.label}, image ${index + 1}`} draggable={true} className="h-auto w-auto max-h-full max-w-full cursor-grab object-contain active:cursor-grabbing" onDragStart={event => event.dataTransfer.setDragImage(event.currentTarget, 0, 0)} />
+              <img src={'./parts/' + image.path} alt={`${piece.label}, image ${index + 1}`} draggable={true} className="h-auto w-auto max-h-full max-w-full cursor-grab object-contain active:cursor-grabbing" />
             </div>
             <figcaption className="mt-2 px-1 text-[11px] font-medium leading-4 text-zinc-500">Image {String(index + 1).padStart(2, '0')}</figcaption>
           </figure>

@@ -133,3 +133,8 @@
         min-height: 120px;
     }
 }
+
+html,
+body {
+    scrollbar-width: none;
+}
